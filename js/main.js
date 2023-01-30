@@ -50,6 +50,9 @@ let app = new Vue({
         },
         inStock(){
             return this.variants[this.selectedVariant].variantQuantity
+        },
+        sale(){
+            return this.brand + ' ' + this.product + ' ' + "On Sale !"
         }
     }
 })

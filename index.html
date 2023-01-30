@@ -59,7 +59,7 @@
             <p v-if="inventory > 10">In stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out! Hurry up !</p>
             <p v-else>Sadly out of stock right now...</p>
-            <p v-show="onSale"> <i> Sonic on sale! </i></p>
+            <p>{{ sale }}</p>
         </div>
     </div>
 
