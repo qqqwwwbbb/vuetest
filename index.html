@@ -19,15 +19,19 @@
     <p>{{ description }}</p>
     <a v-bind:href="link">More products like this</a>
     <div class="product">
-
         <div class="product-image">
             <img v-bind:src="image" v-bind:alt="altText" />
         </div>
 
         <div class="product-info">
             <h1>{{ product }}</h1>
+            <p v-if="inventory > 10">In stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out! Hurry up !</p>
+            <p v-else>Sadly out of stock right now...</p>
+            <p v-show="onSale"> <i> Sonic on sale! </i></p>
         </div>
     </div>
+
 </div>
 </body>
 </html>
