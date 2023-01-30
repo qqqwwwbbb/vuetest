@@ -9,7 +9,7 @@ let app = new Vue({
         image: "./assets/sonic2.jpg",
         link: "https://www.amazon.com/s?k=sonic&ref=nb_sb_noss",
         inventory: 5,
-        inStock: true,
+        inStock: false,
         onSale: true,
         details: ['80% cotton', '20% polyester', 'Gender-neutral'],
         variants: [
