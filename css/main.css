@@ -1,0 +1,9 @@
+*{
+    background-color: #becbff;
+    font-family: sans-serif;
+    font-size: 21px;
+}
+
+.product-image > img {
+    max-width: 500px;
+}
