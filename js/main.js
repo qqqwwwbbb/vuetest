@@ -4,24 +4,26 @@ let app = new Vue({
     el: '#app',
     data: {
         product: "Sonic",
+        brand: "Vue mastery",
         altText: "A pair of socks",
         description: "A pair of warm, fuzzy socks",
-        image: "./assets/sonic2.jpg",
+        selectedVariant: 0,
         link: "https://www.amazon.com/s?k=sonic&ref=nb_sb_noss",
         inventory: 5,
-        inStock: false,
         onSale: true,
         details: ['80% cotton', '20% polyester', 'Gender-neutral'],
         variants: [
             {
                 variantId: 2234,
                 variantColor: 'blue',
-                variantImage: "./assets/sonic1.jpg"
+                variantImage: "./assets/sonic1.jpg",
+                variantQuantity: 10
             },
             {
                 variantId: 2235,
                 variantColor: 'red',
-                variantImage: "./assets/shadow1.jpg"
+                variantImage: "./assets/shadow1.jpg",
+                variantQuantity: 0
             }
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
@@ -34,8 +36,20 @@ let app = new Vue({
         removeFromCart() {
             this.cart -= 1
         },
-        updateProduct(variantImage) {
-            this.image = variantImage
+        updateProduct(index) {
+            this.selectedVariant = index
+            console.log(index)
+        }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product;
+        },
+        image() {
+            return this.variants[this.selectedVariant].variantImage
+        },
+        inStock(){
+            return this.variants[this.selectedVariant].variantQuantity
         }
     }
 })

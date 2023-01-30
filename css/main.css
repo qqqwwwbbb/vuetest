@@ -23,3 +23,9 @@
 .size-box {
     display: flex;
 }
+
+.color-box {
+    display: flex;
+    width: 50px;
+    margin-top: 10px;
+}
