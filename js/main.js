@@ -10,6 +10,18 @@ let app = new Vue({
         link: "https://www.amazon.com/s?k=sonic&ref=nb_sb_noss",
         inventory: 5,
         inStock: true,
-        onSale: true
+        onSale: true,
+        details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+        variants: [
+            {
+                variantId: 2234,
+                variantColor: 'green'
+            },
+            {
+                variantId: 2235,
+                variantColor: 'blue'
+            }
+        ],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     }
 })

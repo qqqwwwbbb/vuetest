@@ -17,6 +17,16 @@
     <p>{{ product }}</p>
     <h1>Product Description: </h1>
     <p>{{ description }}</p>
+    <p>Materials :</p>
+    <ul>
+        <li v-for="detail in details"> <b>{{ detail }}</b></li>
+    </ul>
+    <p> Colors : </p>
+    <div v-for="variant in variants" :key="variant.variantId">
+        <li><b>{{ variant.variantColor }}</b></li>
+    </div>
+    <p> Sizes :</p>
+    <li v-for="size in sizes"> <b>{{ size }}</b></li>
     <a v-bind:href="link">More products like this</a>
     <div class="product">
         <div class="product-image">
