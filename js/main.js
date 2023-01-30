@@ -6,6 +6,7 @@ let app = new Vue({
         product: "Sonic",
         altText: "A pair of socks",
         description: "A pair of warm, fuzzy socks",
-        image: "./assets/sonic2.jpg"
+        image: "./assets/sonic2.jpg",
+        link: "https://www.amazon.com/s?k=sonic&ref=nb_sb_noss"
     }
 })
