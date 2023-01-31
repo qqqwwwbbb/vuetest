@@ -18,10 +18,7 @@ Vue.component('product', {
     },
     template: `
    <div class="product">
-       <div class="cart">
-        <h2> ~ Cart({{ cart }}) ~ </h2>
-        <p>Shipping: {{ shipping }}</p>
-    </div>
+    <p>Shipping: {{ shipping }}</p>
     <h1>Product Name: </h1>
     <p>{{ title }}</p>
     <h1>Product Description: </h1>
@@ -92,16 +89,15 @@ Vue.component('product', {
                     variantQuantity: 0
                 }
             ],
-            sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-            cart: 0
+            sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
         }
     },
     methods: {
         addToCart() {
-            this.cart += 1
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
         },
         removeFromCart() {
-            this.cart -= 1
+            this.$emit('remove-from-cart', this.variants[this.selectedVariant].variantId);
         },
         updateProduct(index) {
             this.selectedVariant = index
@@ -133,8 +129,21 @@ Vue.component('product', {
 let app = new Vue({
     el: '#app',
     data: {
-        premium: true
-    }
+        premium: true,
+        cart: []
+    },
+    methods: {
+        updateCart(id) {
+            this.cart.push(id);
+        },
+        removeCart(id) {
+                for(let i = this.cart.length - 1; i >= 0; i--) {
+                    if (this.cart[i] === id) {
+                        this.cart.splice(i, 1);
+                    }
+                }
+            }
+        }
 })
 
 
