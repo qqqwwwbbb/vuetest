@@ -37,7 +37,6 @@
     margin: 0 auto;
 }
 .reviews {
-    text-align: left;
     word-spacing: 5px;
     color: #e873ff;
 }
@@ -67,4 +66,8 @@
 }
 .cart {
     text-align: center;
+}
+.tab {
+    color: #e873ff;
+    text-align: justify;
 }

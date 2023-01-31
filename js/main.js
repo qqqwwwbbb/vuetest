@@ -1,4 +1,4 @@
-var eventBus = new Vue()
+let eventBus = new Vue()
 
 Vue.component('product', {
     props: {
@@ -49,12 +49,8 @@ Vue.component('product', {
             <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out! Hurry up !</p>
             <p v-else>Sadly out of stock right now...</p>
             <p>{{ sale }}</p>
+            <product-tabs :reviews="reviews"></product-tabs>
         </div>
-        <div>
-        <div class="reviews">
-        <product-tabs :reviews="reviews"></product-tabs>
-        </div>
-    </div>
    </div>
  `,
     data() {
@@ -94,9 +90,13 @@ Vue.component('product', {
             this.$emit('remove-from-cart', this.variants[this.selectedVariant].variantId);
         },
         updateProduct(index) {
-            this.selectedVariant = index
-            console.log(index)
-        }
+            this.selectedVariant = index;
+        },
+    },
+    mounted() {
+        eventBus.$on('review-submitted', productReview => {
+            this.reviews.push(productReview)
+        })
     },
     computed: {
         title() {
@@ -118,11 +118,6 @@ Vue.component('product', {
                 return 2.99
             }
         },
-        mounted() {
-            eventBus.$on('review-submitted', productReview => {
-                this.reviews.push(productReview)
-            })
-        }
     }
 })
 
@@ -213,33 +208,34 @@ Vue.component('product-tabs', {
         }
     },
     template: `
-      <div>
-      
+<div> 
+    
         <ul>
-          <span class="tabs" 
+            <span class="tab"
                 :class="{ activeTab: selectedTab === tab }"
                 v-for="(tab, index) in tabs"
                 @click="selectedTab = tab"
-                :key="tab"
-          >{{ tab }}</span>
+            >{{ tab }}</span>
         </ul>
-
+        <div class="reviews">
         <div v-show="selectedTab === 'Reviews'">
             <p v-if="!reviews.length">There are no reviews yet.</p>
-            <ul v-else>
-                <li v-for="(review, index) in reviews" :key="index">
-                  <p>{{ review.name }}</p>
-                  <p>Rating:{{ review.rating }}</p>
-                  <p>{{ review.review }}</p>
+            <ul>
+                <li v-for="review in reviews">
+                    <p>{{ review.name }}</p>
+                    <p>{{ review.review }}</p>
+                    <p>Rating: {{ review.rating }}</p>
+                    <p>{{ review.recommend }}</p>
                 </li>
             </ul>
         </div>
-
+        <br>
+        
         <div v-show="selectedTab === 'Make a Review'">
-          <product-review></product-review>
+            <product-review></product-review>
         </div>
-    
-      </div>
+    </div>
+    </div>
     `,
     data() {
         return {
