@@ -180,6 +180,7 @@ Vue.component('product', {
     <div class="size-box">
     <li v-for="size in sizes"> <b>{{ size }}</b></li>
     </div>
+    <info-tabs :shipping="shipping" :details="details"></info-tabs>
     <span class="stock-line"
           :style="[inStock === true ? {'text-decoration':'none'} : {'text-decoration':'line-through', 'color':'#718093'}]">
         <p>In stock</p>
@@ -204,7 +205,6 @@ Vue.component('product', {
             <p v-else>Sadly out of stock right now...</p>
             <p>{{ sale }}</p>
         </div>
-        <info-tabs :shipping="shipping" :details="details"></info-tabs>
         <div>
         <div class="reviews">
         <product-tabs :reviews="reviews"></product-tabs>
