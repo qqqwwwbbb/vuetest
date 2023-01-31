@@ -1,1 +1,2 @@
-Project VueTest for practice
+Project VueTest for practice January-February
+Sonic Store 
