@@ -34,3 +34,8 @@
     margin-left: 230px;
     display: flex;
 }
+.reviews {
+    text-align: left;
+    word-spacing: 5px;
+    color: #e873ff;
+}
