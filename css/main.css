@@ -39,3 +39,27 @@
     word-spacing: 5px;
     color: #e873ff;
 }
+.product > h1 {
+    color: rgba(255, 0, 0, 0.82);
+    text-shadow:
+            0 0 7px rgba(255, 100, 100, 0.6),
+            0 0 10px rgba(255, 19, 19, 0.65),
+            0 0 21px rgba(255, 19, 19, 0.6),
+            0 0 42px #ffcccc,
+            0 0 82px #ffc6c6,
+            0 0 92px #ffbebe,
+            0 0 102px #ffc3c3,
+            0 0 151px #ffb9b9;
+}
+.product-info > h1 {
+    color: rgba(112, 0, 255, 0.91);
+    text-shadow:
+            0 0 7px rgba(180, 122, 255, 0.62),
+            0 0 10px rgba(167, 93, 255, 0.82),
+            0 0 21px rgba(115, 0, 255, 0.66),
+            0 0 42px rgba(115, 0, 255, 0.82),
+            0 0 82px rgba(115, 0, 255, 0.82),
+            0 0 92px rgba(169, 101, 255, 0.82),
+            0 0 102px rgba(115, 0, 255, 0.82),
+            0 0 151px rgba(147, 58, 255, 0.82);
+}

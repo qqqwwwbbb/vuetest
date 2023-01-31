@@ -163,7 +163,6 @@ Vue.component('product', {
     },
     template: `
    <div class="product">
-    <p>Shipping: {{ shipping }}</p>
     <h1>Product Name: </h1>
     <p>{{ title }}</p>
     <h1>Product Description: </h1>
@@ -306,7 +305,6 @@ Vue.component('info-tabs', {
     },
     template: `
       <div>
-      
         <ul>
           <span class="tabs" 
                 :class="{ activeTab: selectedTab === tab }"
