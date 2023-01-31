@@ -51,24 +51,6 @@ Vue.component('product-review', {
    <label for="name">Name:</label>
    <input id="name" v-model="name" placeholder="name">
  </p>
- 
- <p>
-    <q-btn label="Prompt" color="primary" @click="prompt" />
-         <p>Would you recommend this product?</p>
-        <label>
-          Yes
-          <input type="radio" value="Yes" v-model="recommend"/>
-        </label>
-        <label>
-          No
-          <input type="radio" value="No" v-model="recommend"/>
-        </label>
-            
-        <p>
-          <input type="submit" value="Enter">  
-        </p>    
-    
-</p>
 
  <p>
    <label for="review">Review:</label>
@@ -86,16 +68,25 @@ Vue.component('product-review', {
    </select>
  </p>
  
+ <p>Would you recommend this product?</p>
+     <label>
+          Yes
+     <input type="radio" value="Yes" v-model="recommend"/>
+     </label>
+     <label>
+          No
+     <input type="radio" value="No" v-model="recommend"/>
+     </label>
+ <p>
+  <input type="submit" value="Submit"> 
+ </p>
+ 
  <p v-if="errors.length">
  <b>Please correct the following error(s):</b>
  <ul>
    <li v-for="error in errors">{{ error }}</li>
  </ul>
 </p>
-
- <p>
-   <input type="submit" value="Submit"> 
- </p>
 
 </form>
  `,
