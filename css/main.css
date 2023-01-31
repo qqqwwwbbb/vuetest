@@ -23,6 +23,7 @@
 }
 .size-box {
     display: flex;
+
 }
 
 .color-box {
@@ -31,8 +32,9 @@
     margin-top: 10px;
 }
 .main {
-    margin-left: 230px;
     display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 .reviews {
     text-align: left;
