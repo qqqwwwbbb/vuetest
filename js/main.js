@@ -239,7 +239,7 @@ Vue.component('product-tabs', {
     `,
     data() {
         return {
-            tabs: ['Reviews', 'Make a Review'],
+            tabs: ['Reviews',' ','Make a Review'],
             selectedTab: 'Reviews'
         }
     }
@@ -292,7 +292,7 @@ Vue.component('info-tabs', {
     `,
     data() {
         return {
-            tabs: ['Shipping', 'Details'],
+            tabs: ['Shipping','  ', 'Details'],
             selectedTab: 'Shipping'
         }
     }
